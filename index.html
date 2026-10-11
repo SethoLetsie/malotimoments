@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Maloti Moments | Discover Lesotho</title>
+ 
+    <meta name="description"
+          content="Discover the beautiful mountains, waterfalls, culture and destinations of Lesotho with Maloti Moments.">
+ 
+    <!-- Apply saved day/night choice before the page paints (prevents a flash) -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem("theme");
+                if (saved === "dark" || saved === "light") {
+                    document.documentElement.setAttribute("data-bs-theme", saved);
+                }
+            } catch (e) { /* storage unavailable: keep default */ }
+        })();
+    </script>
+ 
+    <!-- Bootstrap 5 CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+ 
+    <!-- Our website stylesheet -->
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+ 
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+ 
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-md navbar-dark">
+ 
+        <div class="container">
+ 
+            <a class="navbar-brand" href="index.html"><span>Maloti Moments</span></a>
+ 
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavigation"
+                    aria-controls="mainNavigation"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+ 
+                <span class="navbar-toggler-icon"></span>
+            </button>
+ 
+            <div class="collapse navbar-collapse"
+                 id="mainNavigation">
+ 
+                <ul class="navbar-nav ms-auto align-items-md-center">
+ 
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           aria-current="page"
+                           href="index.html">Home</a>
+                    </li>
+ 
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="about.html">About</a>
+                    </li>
+ 
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Destinations</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="destinations.html">Places to visit</a></li><li><a class="dropdown-item" href="destinations.html#accommodation">Accommodation</a></li><li><a class="dropdown-item" href="destinations.html#activities">Activities</a></li></ul></li>
+ 
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="gallery.html">Gallery</a>
+                    </li>
+ 
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="contact.html">Contact</a>
+                    </li>
+ 
+                    <!-- DAY / NIGHT MODE TOGGLE -->
+                    <li class="nav-item ms-md-3">
+                        <button id="themeToggle"
+                                class="theme-toggle"
+                                type="button"
+                                aria-pressed="false"
+                                aria-label="Switch to dark mode">
+                            <span class="theme-toggle-icon" aria-hidden="true">&#9790;</span>
+                            <span class="theme-toggle-text">Dark</span>
+                        </button>
+                    </li>
+ 
+                </ul>
+            </div>
+        </div>
+    </nav>
+ 
+ 
+    <main id="main-content">
+ 
+        <!-- HERO SECTION (lesotho-hero.jpg is the background) -->
+        <header class="hero-section">
+ 
+            <img src="images/lesotho-hero.jpg"
+                 class="hero-bg"
+                 alt=""
+                 fetchpriority="high">
+ 
+            <div class="hero-overlay" aria-hidden="true"></div>
+ 
+            <div class="container hero-content">
+ 
+                <p class="hero-label">
+                    YOUR JOURNEY BEGINS HERE
+                </p>
+ 
+                <h1>Discover the Beauty of Lesotho</h1>
+ 
+                <p class="hero-text">
+                    From breathtaking mountain views to beautiful waterfalls
+                    and rich Basotho culture, discover unforgettable
+                    experiences in the Kingdom in the Sky.
+                </p>
+ 
+                <div class="hero-buttons">
+                    <a href="destinations.html"
+                       class="btn btn-primary">
+                        Explore Destinations
+                    </a>
+ 
+                    <a href="#booking"
+                       class="btn btn-outline-light">
+                        Plan Your Visit
+                    </a>
+                </div>
+ 
+            </div>
+        </header>
+ 
+ 
+        <!-- INTRODUCTION -->
+        <section class="intro-section py-5">
+            <div class="container text-center">
+ 
+                <p class="section-label">WELCOME TO MALOTI MOMENTS</p>
+ 
+                <h2>Experience the Kingdom in the Sky</h2>
+ 
+                <p class="section-description mx-auto">
+                    Maloti Moments helps you discover the natural beauty,
+                    local traditions and exciting adventures that make
+                    Lesotho special. Find places to visit and start planning
+                    your next memorable journey.
+                </p>
+ 
+            </div>
+        </section>
+ 
+ 
+        <!-- HIGHLIGHTS CAROUSEL -->
+        <section class="highlights-section py-5" aria-label="Highlights">
+            <div class="container">
+                <p id="welcomeBack" class="text-center fw-bold" role="status"></p>
+                <div id="highlightCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#highlightCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#highlightCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#highlightCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"><img src="images/home-mountains.jpg" alt="The beautiful Maloti mountain landscape"><div class="carousel-caption"><h3>Maloti Mountains</h3><p>Peaceful views and outdoor adventure.</p></div></div>
+                        <div class="carousel-item"><img src="images/home-waterfall.jpg" alt="Maletsunyane Falls in Lesotho"><div class="carousel-caption"><h3>Maletsunyane Falls</h3><p>A dramatic waterfall near Semonkong.</p></div></div>
+                        <div class="carousel-item"><img src="images/home-dam.jpg" alt="A dam surrounded by Lesotho mountains"><div class="carousel-caption"><h3>Mountain Dams</h3><p>Calm water surrounded by hills.</p></div></div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#highlightCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#highlightCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- FEATURED DESTINATIONS -->
+        <section class="featured-section py-5">
+ 
+            <div class="container">
+ 
+                <div class="text-center mb-4">
+                    <p class="section-label">EXPLORE LESOTHO</p>
+ 
+                    <h2>Discover Our Featured Places</h2>
+ 
+                    <p>
+                        Find a destination that inspires your next adventure.
+                    </p>
+                </div>
+ 
+ 
+                <!-- DESTINATION SEARCH -->
+                <div class="search-area mx-auto mb-4">
+ 
+                    <label for="destinationSearch"
+                           class="form-label">
+                        Search featured destinations
+                    </label>
+ 
+                    <input type="search"
+                           id="destinationSearch"
+                           class="form-control"
+                           placeholder="Try waterfalls, mountains or dams"
+                           aria-describedby="searchMessage">
+ 
+                    <p id="searchMessage"
+                       class="mt-2"
+                       aria-live="polite"></p>
+ 
+                </div>
+ 
+ 
+                <!-- DESTINATION CARDS -->
+                <div class="row g-4">
+ 
+                    <!-- WATERFALL -->
+                    <div class="col-md-6 col-lg-4 destination-item"
+                         data-search="waterfall maletsunyane semonkong nature">
+ 
+                        <article class="destination-card h-100">
+ 
+                            <div class="destination-image-wrap">
+                                <img src="images/home-waterfall.jpg"
+                                     class="destination-image"
+                                     alt="Maletsunyane Falls in Lesotho"
+                                     loading="lazy">
+                            </div>
+ 
+                            <div class="destination-content">
+ 
+                                <h3>Maletsunyane Falls <span class="badge badge-gold">Popular</span></h3>
+ 
+                                <p>
+                                    Discover an impressive waterfall surrounded
+                                    by the dramatic scenery of Semonkong.
+                                </p>
+ 
+                                <a href="destinations.html"
+                                   class="btn btn-primary">
+                                    Explore More
+                                </a>
+ 
+                            </div>
+                        </article>
+                    </div>
+ 
+ 
+                    <!-- MOUNTAINS -->
+                    <div class="col-md-6 col-lg-4 destination-item"
+                         data-search="mountains maloti hiking adventure scenery">
+ 
+                        <article class="destination-card h-100">
+ 
+                            <div class="destination-image-wrap">
+                                <img src="images/home-mountains.jpg"
+                                     class="destination-image"
+                                     alt="The beautiful Maloti mountain landscape"
+                                     loading="lazy">
+                            </div>
+ 
+                            <div class="destination-content">
+ 
+                                <h3>Maloti Mountains</h3>
+ 
+                                <p>
+                                    Enjoy magnificent mountain landscapes,
+                                    peaceful surroundings and outdoor adventures.
+                                </p>
+ 
+                                <a href="destinations.html"
+                                   class="btn btn-primary">
+                                    Explore More
+                                </a>
+ 
+                            </div>
+                        </article>
+                    </div>
+ 
+ 
+                    <!-- VILLAGE -->
+                    <div class="col-md-6 col-lg-4 destination-item"
+                         data-search="village culture basotho heritage traditions">
+ 
+                        <article class="destination-card h-100">
+ 
+                            <div class="destination-image-wrap">
+                                <img src="images/home-village.jpg"
+                                     class="destination-image"
+                                     alt="Traditional village scenery in Lesotho"
+                                     loading="lazy">
+                            </div>
+ 
+                            <div class="destination-content">
+ 
+                                <h3>Basotho Culture</h3>
+ 
+                                <p>
+                                    Learn about local traditions, heritage
+                                    and everyday life in Lesotho.
+                                </p>
+ 
+                                <a href="about.html"
+                                   class="btn btn-primary">
+                                    Discover Our Culture
+                                </a>
+ 
+                            </div>
+                        </article>
+                    </div>
+ 
+ 
+                    <!-- HORSES -->
+                    <div class="col-md-6 col-lg-4 destination-item"
+                         data-search="horses ponies countryside adventure">
+ 
+                        <article class="destination-card h-100">
+ 
+                            <div class="destination-image-wrap">
+                                <img src="images/home-horses.jpg"
+                                     class="destination-image"
+                                     alt="Basotho horses in the countryside"
+                                     loading="lazy">
+                            </div>
+ 
+                            <div class="destination-content">
+ 
+                                <h3>Mountain Horse Adventures</h3>
+ 
+                                <p>
+                                    Discover the countryside and learn about
+                                    the importance of horses in Basotho life.
+                                </p>
+ 
+                                <a href="destinations.html"
+                                   class="btn btn-primary">
+                                    Explore More
+                                </a>
+ 
+                            </div>
+                        </article>
+                    </div>
+ 
+ 
+                    <!-- DAM -->
+                    <div class="col-md-6 col-lg-4 destination-item"
+                         data-search="dam katse water landscape nature">
+ 
+                        <article class="destination-card h-100">
+ 
+                            <div class="destination-image-wrap">
+                                <img src="images/home-dam.jpg"
+                                     class="destination-image"
+                                     alt="A dam surrounded by Lesotho mountains"
+                                     loading="lazy">
+                            </div>
+ 
+                            <div class="destination-content">
+ 
+                                <h3>Beautiful Dams</h3>
+ 
+                                <p>
+                                    Admire peaceful waters and impressive
+                                    engineering surrounded by mountains.
+                                </p>
+ 
+                                <a href="destinations.html"
+                                   class="btn btn-primary">
+                                    Explore More
+                                </a>
+ 
+                            </div>
+                        </article>
+                    </div>
+ 
+ 
+                    <!-- LANDSCAPE PREVIEW -->
+                    <div class="col-md-6 col-lg-4 destination-item"
+                         data-search="landscape maloti lesotho scenic nature">
+ 
+                        <article class="destination-card h-100">
+ 
+                            <div class="destination-image-wrap">
+                                <img src="images/lesotho-hero.jpg"
+                                     class="destination-image"
+                                     alt="Panoramic mountain landscape in Lesotho"
+                                     loading="lazy">
+                            </div>
+ 
+                            <div class="destination-content">
+ 
+                                <h3>The Kingdom in the Sky</h3>
+ 
+                                <p>
+                                    Experience the remarkable scenery that
+                                    makes Lesotho a unique travel destination.
+                                </p>
+ 
+                                <a href="destinations.html"
+                                   class="btn btn-primary">
+                                    View Destinations
+                                </a>
+ 
+                            </div>
+                        </article>
+                    </div>
+ 
+                </div>
+ 
+                <div class="text-center mt-5">
+ 
+                    <a href="destinations.html"
+                       class="btn btn-primary">
+                        View All Destinations
+                    </a>
+ 
+                </div>
+ 
+            </div>
+        </section>
+ 
+ 
+        <!-- WHY VISIT LESOTHO -->
+        <section class="why-visit-section py-5">
+ 
+            <div class="container">
+ 
+                <div class="text-center mb-4">
+                    <p class="section-label">MAKE MEMORIES</p>
+                    <h2>Why Visit Lesotho?</h2>
+                </div>
+ 
+                <div class="row g-4 text-center">
+ 
+                    <div class="col-md-4">
+                        <div class="feature-box h-100">
+                            <h3>Natural Beauty</h3>
+                            <p>
+                                Explore beautiful mountains, rivers,
+                                waterfalls and peaceful landscapes.
+                            </p>
+                        </div>
+                    </div>
+ 
+                    <div class="col-md-4">
+                        <div class="feature-box h-100">
+                            <h3>Rich Culture</h3>
+                            <p>
+                                Experience Basotho traditions, local
+                                hospitality and cultural heritage.
+                            </p>
+                        </div>
+                    </div>
+ 
+                    <div class="col-md-4">
+                        <div class="feature-box h-100">
+                            <h3>Outdoor Adventure</h3>
+                            <p>
+                                Discover opportunities for sightseeing,
+                                hiking and exploring the countryside.
+                            </p>
+                        </div>
+                    </div>
+ 
+                </div>
+ 
+            </div>
+        </section>
+ 
+ 
+        <!-- TRAVEL TIPS -->
+        <section class="tips-section py-5">
+            <div class="container"><div class="row g-4">
+                <article class="col-lg-8">
+                    <h2>Plan Before You Go</h2>
+                    <p>A few simple tips make your trip to Lesotho safer and more enjoyable.</p>
+                    <div class="accordion" id="tipsAccordion">
+                        <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tip1" aria-expanded="true" aria-controls="tip1">What should I pack?</button></h3>
+                            <div id="tip1" class="accordion-collapse collapse show" data-bs-parent="#tipsAccordion"><div class="accordion-body">Mountain weather changes quickly, so bring warm layers, a rain jacket and sturdy shoes.</div></div></div>
+                        <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip2" aria-expanded="false" aria-controls="tip2">How do I get around?</button></h3>
+                            <div id="tip2" class="accordion-collapse collapse" data-bs-parent="#tipsAccordion"><div class="accordion-body">Main roads are easy to use, but some mountain routes are rough. Ask your host about road conditions first.</div></div></div>
+                        <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip3" aria-expanded="false" aria-controls="tip3">How should I respect local culture?</button></h3>
+                            <div id="tip3" class="accordion-collapse collapse" data-bs-parent="#tipsAccordion"><div class="accordion-body">Greet people warmly and ask before taking photos of people or their homes.</div></div></div>
+                    </div>
+                </article>
+                <div class="col-lg-4"><aside class="sticky-aside" aria-label="Quick facts">
+                    <h3>Quick Facts</h3>
+                    <ul class="mb-0"><li>Capital: Maseru</li><li>Languages: Sesotho and English</li><li>Currency: Loti (plural Maloti)</li><li>Known as the Kingdom in the Sky</li></ul>
+                </aside></div>
+            </div></div>
+        </section>
+ 
+ 
+        <!-- BOOKING ENQUIRY -->
+        <section class="booking-section py-5" id="booking">
+ 
+            <div class="container">
+ 
+                <div class="booking-panel mx-auto">
+ 
+                    <div class="text-center mb-4">
+ 
+                        <p class="section-label">PLAN YOUR JOURNEY</p>
+ 
+                        <h2>Start Planning Your Visit</h2>
+ 
+                        <p>
+                            Complete this short form to prepare your travel
+                            enquiry.
+                        </p>
+ 
+                    </div>
+ 
+ 
+                    <form id="bookingForm" data-validate novalidate>
+ 
+                        <div class="mb-3">
+ 
+                            <label for="visitorName"
+                                   class="form-label">
+                                Full Name
+                            </label>
+ 
+                            <input type="text"
+                                   class="form-control"
+                                   id="visitorName" data-min="2"
+                                   name="visitorName"
+                                   autocomplete="name"
+                                   required>
+ 
+                        </div>
+ 
+ 
+                        <div class="mb-3">
+ 
+                            <label for="visitorEmail"
+                                   class="form-label">
+                                Email Address
+                            </label>
+ 
+                            <input type="email"
+                                   class="form-control"
+                                   id="visitorEmail"
+                                   name="visitorEmail"
+                                   autocomplete="email"
+                                   required>
+ 
+                        </div>
+ 
+ 
+                        <div class="mb-3">
+ 
+                            <label for="preferredDestination"
+                                   class="form-label">
+                                Preferred Destination
+                            </label>
+ 
+                            <select class="form-select"
+                                    id="preferredDestination"
+                                    name="preferredDestination"
+                                    required>
+ 
+                                <option value="">Choose a destination</option>
+                                <option value="Maletsunyane Falls">Maletsunyane Falls</option>
+                                <option value="Maloti Mountains">Maloti Mountains</option>
+                                <option value="Basotho Culture">Basotho Culture</option>
+                                <option value="Katse Dam">Katse Dam</option>
+                                <option value="Other">Other</option>
+ 
+                            </select>
+ 
+                        </div>
+ 
+ 
+                        <div class="mb-3">
+ 
+                            <label for="visitDate"
+                                   class="form-label">
+                                Preferred Visit Date
+                            </label>
+ 
+                            <input type="date"
+                                   class="form-control"
+                                   id="visitDate"
+                                   name="visitDate"
+                                   required>
+ 
+                        </div>
+ 
+ 
+                        <div class="row g-3 mb-3">
+<div class="col-6"><label for="guests" class="form-label">Guests</label><input type="number" class="form-control" id="guests" name="guests" min="1" max="20" value="1" required></div>
+<div class="col-6"><label for="nights" class="form-label">Nights</label><input type="number" class="form-control" id="nights" name="nights" min="1" max="30" value="1" required></div></div>
+<p id="costSummary" class="cost-summary" aria-live="polite"></p>
+<button type="submit" class="btn btn-primary w-100">Submit Enquiry</button>
+ 
+                        <div class="form-status" role="status" aria-live="polite"></div>
+ 
+                        <p class="small text-muted mt-2">
+                            This is a demonstration form. It does not
+                            send or confirm a real booking.
+                        </p>
+ 
+                    </form>
+ 
+                </div>
+ 
+            </div>
+        </section>
+ 
+ 
+        <!-- CALL TO ACTION -->
+        <section class="cta-section py-5">
+ 
+            <div class="container text-center">
+ 
+                <h2>Your Maloti Adventure Awaits</h2>
+ 
+                <p>
+                    Start exploring the beauty and culture of Lesotho today.
+                </p>
+ 
+                <a href="gallery.html"
+                   class="btn btn-primary">
+                    View Our Gallery
+                </a>
+ 
+            </div>
+ 
+        </section>
+ 
+    </main>
+ 
+ 
+    <!-- SUCCESS MODAL -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+            <div class="modal-header"><h2 class="modal-title fs-5" id="successTitle">Enquiry ready</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            <div class="modal-body"><p id="successText" class="mb-0"></p></div>
+            <div class="modal-footer"><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button></div>
+        </div></div>
+    </div>
+ 
+    <!-- FOOTER -->
+    <footer class="text-center py-4">
+ 
+        <div class="container">
+ 
+            
+<p class="mb-2">
+                <strong>Maloti Moments</strong>
+            </p>
+ 
+            <p>
+                Discover the beauty of the Kingdom in the Sky.
+            </p>
+ 
+            <div class="footer-links mb-3">
+ 
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+ 
+            </div>
+ 
+            <div class="footer-bottom"><p class="mb-0">&copy; <span id="currentYear">2026</span> Maloti Moments. All rights reserved.</p></div>
+ 
+        </div>
+ 
+    </footer>
+ 
+ 
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
+    <!-- Our website JavaScript -->
+    <script src="scripts.js"></script>
+ 
+</body>
+</html>
+ 
+ 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery | Maloti Moments</title>
+<meta name="description" content="31 photos of Lesotho. Click any photo to enlarge it.">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-bs-theme",t);}}catch(e){}})();</script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header>
+<nav class="navbar navbar-expand-md navbar-dark" aria-label="Main navigation">
+<div class="container">
+<a class="navbar-brand" href="index.html"><span>Maloti Moments</span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="mainNavigation">
+<ul class="navbar-nav ms-auto align-items-md-center">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Destinations</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="destinations.html">Places to visit</a></li><li><a class="dropdown-item" href="destinations.html#accommodation">Accommodation</a></li><li><a class="dropdown-item" href="destinations.html#activities">Activities</a></li></ul></li>
+<li class="nav-item"><a class="nav-link active" aria-current="page" href="gallery.html">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+<li class="nav-item ms-md-3"><button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode"><span class="theme-toggle-icon" aria-hidden="true">&#9790;</span><span class="theme-toggle-text">Dark</span></button></li>
+</ul></div></div></nav></header>
+<main id="main-content">
+<div class="page-header"><div class="container"><h1>Photo Gallery</h1><p>31 photos of Lesotho. Click any photo to enlarge it.</p></div></div>
+ 
+<section class="content-section"><div class="container">
+<article class="text-center mb-3"><h2>Lesotho in Pictures</h2><p class="section-description mx-auto">Mountains, waterfalls, dams, villages and people. Choose a category, then click a photo to enlarge it.</p></article>
+<div class="filter-bar" role="group" aria-label="Filter photos">
+<button class="filter-btn active" type="button" data-filter="All" aria-pressed="true">All</button>
+<button class="filter-btn" type="button" data-filter="Nature" aria-pressed="false">Nature</button>
+<button class="filter-btn" type="button" data-filter="Culture" aria-pressed="false">Culture</button>
+<button class="filter-btn" type="button" data-filter="Adventure" aria-pressed="false">Adventure</button></div>
+<div class="row g-3">
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: A waterfall flowing through a green gorge"><img src="images/gallery-waterfall.jpg" alt="A waterfall flowing through a green gorge" loading="lazy"><span class="gallery-caption">A waterfall flowing through a green gorge</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: Maletsunyane Falls dropping into a green gorge"><img src="images/destination-maletsunyane.jpg" alt="Maletsunyane Falls dropping into a green gorge" loading="lazy"><span class="gallery-caption">Maletsunyane Falls dropping into a green gorge</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: A tall waterfall surrounded by green cliffs"><img src="images/home-waterfall.jpg" alt="A tall waterfall surrounded by green cliffs" loading="lazy"><span class="gallery-caption">A tall waterfall surrounded by green cliffs</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: A blue dam reservoir among the mountains"><img src="images/gallery-dam.jpg" alt="A blue dam reservoir among the mountains" loading="lazy"><span class="gallery-caption">A blue dam reservoir among the mountains</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: Katse Dam and its spillway among the mountains"><img src="images/destination-katse.jpg" alt="Katse Dam and its spillway among the mountains" loading="lazy"><span class="gallery-caption">Katse Dam and its spillway among the mountains</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: Mohale Dam reservoir under a blue sky"><img src="images/destination-mohale.jpg" alt="Mohale Dam reservoir under a blue sky" loading="lazy"><span class="gallery-caption">Mohale Dam reservoir under a blue sky</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: A dam winding between green mountains"><img src="images/home-dam.jpg" alt="A dam winding between green mountains" loading="lazy"><span class="gallery-caption">A dam winding between green mountains</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: Green rolling hills in Lesotho"><img src="images/gallery-green-hills.jpg" alt="Green rolling hills in Lesotho" loading="lazy"><span class="gallery-caption">Green rolling hills in Lesotho</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: A green mountain valley in Lesotho"><img src="images/about-landscape.jpg" alt="A green mountain valley in Lesotho" loading="lazy"><span class="gallery-caption">A green mountain valley in Lesotho</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: A river winding through a wide valley"><img src="images/gallery-river.jpg" alt="A river winding through a wide valley" loading="lazy"><span class="gallery-caption">A river winding through a wide valley</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: A mushroom-shaped rock formation"><img src="images/gallery-rocks.jpg" alt="A mushroom-shaped rock formation" loading="lazy"><span class="gallery-caption">A mushroom-shaped rock formation</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: A rocky mountain peak under a blue sky"><img src="images/home-mountains.jpg" alt="A rocky mountain peak under a blue sky" loading="lazy"><span class="gallery-caption">A rocky mountain peak under a blue sky</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: A snow-covered mountain village"><img src="images/gallery-snow-mountains.jpg" alt="A snow-covered mountain village" loading="lazy"><span class="gallery-caption">A snow-covered mountain village</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: A snowy mountain road in the Maloti"><img src="images/lesotho-hero.jpg" alt="A snowy mountain road in the Maloti" loading="lazy"><span class="gallery-caption">A snowy mountain road in the Maloti</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: Red cliffs glowing at sunset"><img src="images/gallery-sunset.jpg" alt="Red cliffs glowing at sunset" loading="lazy"><span class="gallery-caption">Red cliffs glowing at sunset</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: Antelope standing in dry grassland"><img src="images/gallery-wildlife.jpg" alt="Antelope standing in dry grassland" loading="lazy"><span class="gallery-caption">Antelope standing in dry grassland</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: The Bokong viewpoint above a misty valley"><img src="images/destination-bokong.jpg" alt="The Bokong viewpoint above a misty valley" loading="lazy"><span class="gallery-caption">The Bokong viewpoint above a misty valley</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Nature"><button class="gallery-item" type="button" aria-label="Open photo: Still water reflecting the sky at Sehlabathebe"><img src="images/destination-sehlabathebe.jpg" alt="Still water reflecting the sky at Sehlabathebe" loading="lazy"><span class="gallery-caption">Still water reflecting the sky at Sehlabathebe</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Culture"><button class="gallery-item" type="button" aria-label="Open photo: Traditional Basotho village houses"><img src="images/gallery-culture.jpg" alt="Traditional Basotho village houses" loading="lazy"><span class="gallery-caption">Traditional Basotho village houses</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Culture"><button class="gallery-item" type="button" aria-label="Open photo: A village and road in the valley"><img src="images/gallery-village.jpg" alt="A village and road in the valley" loading="lazy"><span class="gallery-caption">A village and road in the valley</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Culture"><button class="gallery-item" type="button" aria-label="Open photo: A village on a green hillside"><img src="images/home-village.jpg" alt="A village on a green hillside" loading="lazy"><span class="gallery-caption">A village on a green hillside</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Culture"><button class="gallery-item" type="button" aria-label="Open photo: Thaba-Bosiu flat-topped mountain"><img src="images/destination-thaba-bosiu.jpg" alt="Thaba-Bosiu flat-topped mountain" loading="lazy"><span class="gallery-caption">Thaba-Bosiu flat-topped mountain</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Culture"><button class="gallery-item" type="button" aria-label="Open photo: Basotho people in traditional blankets and hats"><img src="images/about-culture.jpg" alt="Basotho people in traditional blankets and hats" loading="lazy"><span class="gallery-caption">Basotho people in traditional blankets and hats</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Culture"><button class="gallery-item" type="button" aria-label="Open photo: A group gathered in colourful blankets"><img src="images/about-people.jpg" alt="A group gathered in colourful blankets" loading="lazy"><span class="gallery-caption">A group gathered in colourful blankets</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Culture"><button class="gallery-item" type="button" aria-label="Open photo: A handmade Basotho craft in the shape of a hut"><img src="images/about-crafts.jpg" alt="A handmade Basotho craft in the shape of a hut" loading="lazy"><span class="gallery-caption">A handmade Basotho craft in the shape of a hut</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Culture"><button class="gallery-item" type="button" aria-label="Open photo: A view over Maseru city"><img src="images/contact-maseru.jpg" alt="A view over Maseru city" loading="lazy"><span class="gallery-caption">A view over Maseru city</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Adventure"><button class="gallery-item" type="button" aria-label="Open photo: Hikers on a mountain ridge"><img src="images/gallery-hiking.jpg" alt="Hikers on a mountain ridge" loading="lazy"><span class="gallery-caption">Hikers on a mountain ridge</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Adventure"><button class="gallery-item" type="button" aria-label="Open photo: Riders on Basotho horses in the mountains"><img src="images/gallery-horses.jpg" alt="Riders on Basotho horses in the mountains" loading="lazy"><span class="gallery-caption">Riders on Basotho horses in the mountains</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Adventure"><button class="gallery-item" type="button" aria-label="Open photo: Horses grazing in the countryside"><img src="images/home-horses.jpg" alt="Horses grazing in the countryside" loading="lazy"><span class="gallery-caption">Horses grazing in the countryside</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Adventure"><button class="gallery-item" type="button" aria-label="Open photo: The winding Sani Pass road"><img src="images/destination-sani-pass.jpg" alt="The winding Sani Pass road" loading="lazy"><span class="gallery-caption">The winding Sani Pass road</span></button></div>
+<div class="col-6 col-sm-4 col-lg-3 col-xxl-2" data-category="Adventure"><button class="gallery-item" type="button" aria-label="Open photo: Snow-covered slopes at Afriski"><img src="images/destination-afriski.jpg" alt="Snow-covered slopes at Afriski" loading="lazy"><span class="gallery-caption">Snow-covered slopes at Afriski</span></button></div>
+</div></div></section>
+<div class="modal fade" id="lightbox" tabindex="-1" aria-labelledby="lightboxTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content">
+<div class="modal-header"><h2 class="modal-title fs-5" id="lightboxTitle">Photo preview</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+<div class="modal-body"><img id="lightboxImg" class="lightbox-img" src="" alt=""><p id="lightboxCaption" class="lightbox-caption"></p>
+<div class="lightbox-controls"><button id="lightboxPrev" class="btn btn-outline-primary" type="button">Previous</button><button id="lightboxNext" class="btn btn-outline-primary" type="button">Next</button></div></div>
+</div></div></div>
+</main>
+<footer class="text-center py-4"><div class="container">
+
+<p class="mb-2"><strong>Maloti Moments</strong></p>
+<p>Discover the beauty of the Kingdom in the Sky.</p>
+<div class="footer-links mb-3"><a href="index.html">Home</a><a href="about.html">About</a><a href="destinations.html">Destinations</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a></div>
+<div class="footer-bottom"><p class="mb-0">&copy; <span id="currentYear">2026</span> Maloti Moments. All rights reserved.</p></div></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
+ 

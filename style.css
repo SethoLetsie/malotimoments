@@ -1,0 +1,553 @@
+
+
+:root {
+    --navy: #17324D;
+    --blue: #397CA5;
+    --blue-dark: #2A6A92;
+    --sky: #B8D8E8;
+    --cream: #F7F5EF;
+    --gold: #E0AF58;
+    --gold-light: #F0C777;
+
+    --bg: var(--cream);
+    --bg-alt: #EAF1F5;
+    --surface: #FFFFFF;
+    --text: #344454;
+    --heading: var(--navy);
+    --muted: #566676;
+    --link: var(--blue-dark);
+    --link-hover: var(--navy);
+    --label: var(--blue-dark);
+    --border: #DFE7EC;
+    --input-bg: #FFFFFF;
+    --input-border: #B9C7D1;
+    --focus: var(--blue-dark);
+    --danger-text: #B02A37;
+    --success-text: #146C43;
+
+    --nav-bg: var(--navy);
+    --footer-bg: var(--navy);
+    --btn-bg: var(--navy);
+    --btn-hover: var(--blue-dark);
+    --btn-text: #FFFFFF;
+    --btn-hover-text: #FFFFFF;
+
+    --shadow: 0 5px 20px rgba(23, 50, 77, 0.10);
+    --shadow-hover: 0 12px 28px rgba(23, 50, 77, 0.17);
+    --radius: 12px;
+}
+
+:root[data-bs-theme="dark"],
+body.dark-mode {
+    color-scheme: dark;
+    --bg: #101B28;
+    --bg-alt: #142335;
+    --surface: #1B2B3D;
+    --text: #D6E0EA;
+    --heading: #F7F5EF;
+    --muted: #AEBDCA;
+    --link: #7CC0E6;
+    --link-hover: var(--gold);
+    --label: var(--gold);
+    --border: #30465D;
+    --input-bg: #142335;
+    --input-border: #48627A;
+    --focus: var(--gold);
+    --danger-text: #FF8A94;
+    --success-text: #75D9A6;
+
+    --nav-bg: #0B1520;
+    --footer-bg: #0B1520;
+    --btn-bg: #7CC0E6;
+    --btn-hover: var(--gold);
+    --btn-text: #0B1520;
+    --btn-hover-text: #0B1520;
+
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.40);
+    --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.55);
+}
+
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+    /* Make Bootstrap components follow our theme tokens */
+    --bs-body-bg: var(--bg);
+    --bs-body-color: var(--text);
+    --bs-heading-color: var(--heading);
+    --bs-border-color: var(--border);
+    --bs-secondary-color: var(--muted);
+
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+body, .navbar, .card, .destination-card, .destination-card-home,
+.experience-card, .feature-box, .booking-panel, .contact-form,
+.contact-info, .form-control, .form-select, footer {
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+}
+
+img { max-width: 100%; height: auto; }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--heading);
+}
+section h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); }
+
+a { color: var(--link); text-decoration: none; transition: color .3s ease; }
+a:hover { color: var(--link-hover); }
+p a:not(.btn) { text-decoration: underline; text-underline-offset: 3px; }
+
+.text-muted, .text-body-secondary { color: var(--muted) !important; }
+
+.skip-link {
+    position: absolute; left: 12px; top: -60px; z-index: 2000;
+    background: var(--gold); color: #111; padding: 8px 14px;
+    border-radius: 6px; transition: top .2s;
+}
+.skip-link:focus { top: 12px; color: #111; }
+
+/* ---------- 3. NAVBAR ---------- */
+.navbar {
+    background-color: var(--nav-bg);
+    position: sticky; top: 0; z-index: 1030;
+    padding-block: .7rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+}
+.navbar-brand {
+    font-family: Georgia, serif; font-size: 1.5rem; font-weight: 700; color: #fff;
+}
+.navbar-brand:hover { color: var(--gold); }
+.navbar .nav-link {
+    color: rgba(255, 255, 255, .9); font-weight: 500;
+    padding: .5rem .9rem; border-bottom: 2px solid transparent;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active { color: var(--gold); border-bottom-color: var(--gold); }
+.navbar-toggler:focus { box-shadow: 0 0 0 3px rgba(224, 175, 88, .45); }
+
+.dropdown-menu {
+    --bs-dropdown-bg: var(--surface);
+    --bs-dropdown-color: var(--text);
+    --bs-dropdown-border-color: var(--border);
+    --bs-dropdown-link-color: var(--text);
+    --bs-dropdown-link-hover-color: var(--link-hover);
+    --bs-dropdown-link-hover-bg: var(--bg-alt);
+    --bs-dropdown-link-active-color: var(--btn-text);
+    --bs-dropdown-link-active-bg: var(--btn-bg);
+    border-radius: var(--radius); box-shadow: var(--shadow);
+}
+
+
+.theme-toggle {
+    display: inline-flex; align-items: center; justify-content: center; gap: .45rem;
+    padding: .4rem 1rem; border: 1px solid var(--gold); border-radius: 50px;
+    background: transparent; color: #fff;
+    font-size: .9rem; font-weight: 600; white-space: nowrap; cursor: pointer;
+    transition: background-color .3s ease, color .3s ease;
+}
+.theme-toggle:hover { background: var(--gold); color: var(--navy); }
+.theme-toggle-icon { font-size: 1.1rem; line-height: 1; }
+
+/* ---------- 4. BUTTONS ---------- */
+.btn { border-radius: 8px; padding: .65rem 1.4rem; font-weight: 700; transition: all .3s ease; }
+
+.btn-primary {
+    --bs-btn-color: var(--btn-text);
+    --bs-btn-bg: var(--btn-bg);
+    --bs-btn-border-color: var(--btn-bg);
+    --bs-btn-hover-color: var(--btn-hover-text);
+    --bs-btn-hover-bg: var(--btn-hover);
+    --bs-btn-hover-border-color: var(--btn-hover);
+    --bs-btn-active-color: var(--btn-hover-text);
+    --bs-btn-active-bg: var(--btn-hover);
+    --bs-btn-active-border-color: var(--btn-hover);
+    --bs-btn-focus-shadow-rgb: 224, 175, 88;
+}
+.btn-gold, .hero-section .btn-primary, .home-hero .btn-primary,
+.cta-section .btn-primary, .home-cta .btn-primary, .page-header .btn-primary {
+    --bs-btn-color: var(--navy);
+    --bs-btn-bg: var(--gold);
+    --bs-btn-border-color: var(--gold);
+    --bs-btn-hover-color: var(--navy);
+    --bs-btn-hover-bg: var(--gold-light);
+    --bs-btn-hover-border-color: var(--gold-light);
+    --bs-btn-active-color: var(--navy);
+    --bs-btn-active-bg: var(--gold-light);
+    --bs-btn-active-border-color: var(--gold-light);
+}
+.btn-outline-primary {
+    --bs-btn-color: var(--link);
+    --bs-btn-border-color: var(--link);
+    --bs-btn-hover-color: var(--btn-text);
+    --bs-btn-hover-bg: var(--btn-bg);
+    --bs-btn-hover-border-color: var(--btn-bg);
+    --bs-btn-active-color: var(--btn-text);
+    --bs-btn-active-bg: var(--btn-bg);
+}
+.btn-outline-light { --bs-btn-hover-color: var(--navy); }
+
+/* ---------- 5. HERO (lesotho-hero.jpg) ---------- */
+.hero-section, .home-hero {
+    position: relative; display: flex; align-items: center;
+    min-height: clamp(440px, 78vh, 680px);
+    padding: 4rem 0; color: #fff; overflow: hidden; isolation: isolate;
+}
+/* Option A: <img class="hero-bg"> (used in index.html) */
+.hero-bg {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center; z-index: -2;
+}
+.hero-overlay {
+    position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(90deg, rgba(23,50,77,.9), rgba(23,50,77,.5) 55%, rgba(23,50,77,.2));
+}
+:root[data-bs-theme="dark"] .hero-overlay,
+body.dark-mode .hero-overlay {
+    background: linear-gradient(90deg, rgba(3,9,12,.92), rgba(3,9,12,.65) 55%, rgba(3,9,12,.4));
+}
+/* Option B: CSS background (older .home-hero markup) */
+.home-hero {
+    background: linear-gradient(90deg, rgba(23,50,77,.88), rgba(23,50,77,.35)),
+                url("images/lesotho-hero.jpg") center / cover no-repeat;
+}
+
+/* Text stays on the same left edge as the navbar brand */
+.hero-content { width: 100%; }
+.hero-content > * { max-width: 40rem; }
+
+.hero-section h1, .home-hero h1 {
+    color: #fff; font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 1rem;
+}
+.hero-label {
+    color: var(--gold); font-weight: 700; font-size: .85rem;
+    letter-spacing: .14em; text-transform: uppercase; margin-bottom: .75rem;
+}
+.hero-text, .home-hero p:not(.hero-label) {
+    color: rgba(255,255,255,.93); font-size: 1.1rem; margin-bottom: 1.75rem;
+}
+.hero-buttons { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+/* Inner-page banner (About, Destinations, Gallery, Contact) */
+.page-header {
+    background: linear-gradient(135deg, var(--navy), #235F82);
+    color: #fff; padding: 4rem 0; text-align: center;
+}
+.page-header h1 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: .75rem; }
+.page-header p { max-width: 700px; margin: 0 auto; color: var(--sky); }
+
+/* ---------- 6. SECTIONS ---------- */
+.intro-section, .why-visit-section, .experience-section, #about-lesotho { background: var(--bg); }
+.featured-section, .booking-section, #destinations { background: var(--bg-alt); }
+.intro-section, .featured-section, .why-visit-section, .booking-section,
+.experience-section, .content-section, .cta-section, .home-cta {
+    padding-block: clamp(3rem, 6vw, 5rem);
+}
+.content-section:nth-of-type(even) { background: var(--bg-alt); }
+
+.section-heading { max-width: 760px; margin: 0 auto 2.5rem; text-align: center; }
+.section-label, .eyebrow {
+    color: var(--label); font-size: .8rem; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase; margin-bottom: .5rem;
+}
+.section-description { max-width: 62ch; color: var(--muted); }
+
+.cta-section, .home-cta { background: var(--nav-bg); color: #fff; text-align: center; }
+.cta-section h2, .home-cta h2 { color: #fff; }
+.cta-section p, .home-cta p { color: rgba(255,255,255,.9); }
+
+/* ---------- 7. CARDS AND BOXES (equal height, equal images) ---------- */
+.destination-card, .destination-card-home, .experience-card, .feature-box,
+.booking-panel, .contact-form, .contact-info, .card, aside {
+    background: var(--surface); color: var(--text);
+    border: 1px solid var(--border); border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+.card {
+    --bs-card-bg: var(--surface); --bs-card-color: var(--text);
+    --bs-card-border-color: var(--border); --bs-card-cap-bg: var(--bg-alt);
+}
+
+.destination-card, .destination-card-home, .card {
+    display: flex; flex-direction: column; height: 100%; overflow: hidden;
+}
+.destination-card:hover, .destination-card-home:hover, .experience-card:hover {
+    transform: translateY(-5px); box-shadow: var(--shadow-hover);
+}
+.destination-card, .destination-card-home, .experience-card {
+    transition: transform .3s ease, box-shadow .3s ease, background-color .3s ease, border-color .3s ease;
+}
+
+.destination-image-wrap { aspect-ratio: 4 / 3; overflow: hidden; background: var(--bg-alt); }
+.destination-image {
+    display: block; width: 100%; height: 100%;
+    object-fit: cover; object-position: center; transition: transform .5s ease;
+}
+.destination-card:hover .destination-image { transform: scale(1.05); }
+.destination-card-home > img, .card > .card-img-top {
+    width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+}
+
+.destination-content, .card-content, .card-body {
+    display: flex; flex-direction: column; flex: 1; padding: 1.25rem 1.4rem 1.5rem;
+}
+.destination-content h3, .card-content h3 { font-size: 1.3rem; margin-bottom: .5rem; }
+.destination-content p, .card-content p { color: var(--muted); margin-bottom: 1.25rem; }
+/* last link or button always sits at the bottom edge of the card */
+.destination-content > :last-child,
+.card-content > :last-child { margin-top: auto; align-self: flex-start; }
+.card-content > a:not(.btn) { font-weight: 700; }
+
+.feature-box, .experience-card {
+    height: 100%; padding: 2rem 1.5rem; border-top: 4px solid var(--gold);
+}
+.feature-box h3, .experience-card h3 { font-size: 1.25rem; margin-bottom: .75rem; }
+.feature-box p, .experience-card p { color: var(--muted); margin-bottom: 0; }
+.experience-number { color: var(--label); font-size: 1.8rem; font-weight: 800; margin-bottom: .5rem; }
+
+.welcome-image {
+    width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+    border-radius: var(--radius); box-shadow: var(--shadow);
+}
+
+aside { padding: 1.5rem; border-left: 4px solid var(--gold); }
+aside h2, aside h3 { font-size: 1.25rem; }
+@media (min-width: 992px) { aside.sticky-aside { position: sticky; top: 90px; } }
+
+/* Tables (accommodation / prices) */
+.table-responsive { border-radius: var(--radius); box-shadow: var(--shadow); }
+.table {
+    --bs-table-bg: var(--surface); --bs-table-color: var(--text);
+    --bs-table-border-color: var(--border);
+    --bs-table-striped-bg: var(--bg-alt); --bs-table-striped-color: var(--text);
+    --bs-table-hover-bg: var(--bg-alt); --bs-table-hover-color: var(--text);
+    vertical-align: middle; margin-bottom: 0;
+}
+.table thead th { background: var(--navy); color: #fff; border-color: var(--navy); white-space: nowrap; }
+
+/* ---------- 8. BOOTSTRAP COMPONENTS ---------- */
+.carousel { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.carousel-item img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; }
+.carousel-caption {
+    background: rgba(23,50,77,.75); border-radius: 10px;
+    padding: .75rem 1rem; bottom: 1.5rem;
+}
+.carousel-caption h3, .carousel-caption h5, .carousel-caption p { color: #fff; margin-bottom: .25rem; }
+.carousel-indicators [data-bs-target] { background-color: var(--gold); }
+
+.accordion {
+    --bs-accordion-bg: var(--surface); --bs-accordion-color: var(--text);
+    --bs-accordion-border-color: var(--border);
+    --bs-accordion-btn-color: var(--heading); --bs-accordion-btn-bg: var(--surface);
+    --bs-accordion-active-color: var(--heading); --bs-accordion-active-bg: var(--bg-alt);
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 .2rem rgba(224,175,88,.45);
+    --bs-accordion-border-radius: var(--radius);
+    --bs-accordion-inner-border-radius: calc(var(--radius) - 1px);
+}
+.accordion-button { font-weight: 700; }
+
+.modal {
+    --bs-modal-bg: var(--surface); --bs-modal-color: var(--text);
+    --bs-modal-border-color: var(--border);
+    --bs-modal-header-border-color: var(--border);
+    --bs-modal-footer-border-color: var(--border);
+    --bs-modal-border-radius: var(--radius);
+}
+
+.alert { border-radius: 10px; font-weight: 500; }
+
+.badge { font-weight: 700; letter-spacing: .03em; padding: .45em .8em; border-radius: 50px; }
+.badge-gold { background: var(--gold); color: var(--navy); }
+
+.pagination {
+    --bs-pagination-color: var(--link); --bs-pagination-bg: var(--surface);
+    --bs-pagination-border-color: var(--border);
+    --bs-pagination-hover-color: var(--link-hover); --bs-pagination-hover-bg: var(--bg-alt);
+    --bs-pagination-hover-border-color: var(--border);
+    --bs-pagination-focus-color: var(--link-hover); --bs-pagination-focus-bg: var(--bg-alt);
+    --bs-pagination-focus-box-shadow: 0 0 0 .2rem rgba(224,175,88,.45);
+    --bs-pagination-active-color: var(--btn-text); --bs-pagination-active-bg: var(--btn-bg);
+    --bs-pagination-active-border-color: var(--btn-bg);
+    --bs-pagination-disabled-color: var(--muted); --bs-pagination-disabled-bg: var(--bg-alt);
+    --bs-pagination-disabled-border-color: var(--border);
+    justify-content: center;
+}
+
+/* ---------- 9. GALLERY AND LIGHTBOX ---------- */
+.filter-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin-bottom: 2rem; }
+.filter-btn {
+    padding: .4rem 1.1rem; border: 1px solid var(--link); border-radius: 50px;
+    background: transparent; color: var(--link); font-weight: 600; cursor: pointer;
+    transition: all .3s ease;
+}
+.filter-btn:hover, .filter-btn.active {
+    background: var(--btn-bg); border-color: var(--btn-bg); color: var(--btn-text);
+}
+
+.gallery-grid {
+    display: grid; gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+}
+.gallery-item {
+    position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; margin: 0; padding: 0;
+    border: 0; overflow: hidden; border-radius: 10px; box-shadow: var(--shadow);
+    background: var(--bg-alt); cursor: pointer;
+}
+.gallery-item img {
+    width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease;
+}
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-item figcaption, .gallery-caption {
+    position: absolute; inset: auto 0 0 0; padding: 1.5rem 1rem .75rem;
+    color: #fff; font-weight: 600; text-align: left;
+    background: linear-gradient(transparent, rgba(8,20,30,.85));
+}
+.lightbox-img {
+    display: block; max-width: 100%; max-height: 72vh; margin: 0 auto;
+    object-fit: contain; border-radius: 8px;
+}
+.lightbox-caption { text-align: center; color: var(--muted); margin: .75rem 0 0; }
+.lightbox-controls { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1rem; }
+
+/* ---------- 10. FORMS ---------- */
+.booking-panel, .contact-form { max-width: 680px; margin-inline: auto; padding: 2.25rem; }
+.contact-info { padding: 2rem; height: 100%; }
+
+.form-label { font-weight: 700; color: var(--heading); margin-bottom: .4rem; }
+.form-control, .form-select {
+    background-color: var(--input-bg); color: var(--text);
+    border: 1px solid var(--input-border); border-radius: 8px; padding: .65rem .9rem;
+}
+.form-control::placeholder { color: var(--muted); }
+.form-control:focus, .form-select:focus {
+    background-color: var(--input-bg); color: var(--text); border-color: var(--focus);
+    box-shadow: 0 0 0 .2rem color-mix(in srgb, var(--focus) 30%, transparent);
+}
+textarea.form-control { min-height: 140px; resize: vertical; }
+.form-check-input:checked { background-color: var(--btn-bg); border-color: var(--btn-bg); }
+.form-text { color: var(--muted); }
+
+.invalid-feedback { color: var(--danger-text); font-weight: 600; }
+.valid-feedback { color: var(--success-text); font-weight: 600; }
+#bookingMessage, .form-success { font-weight: 600; color: var(--success-text); }
+
+.search-area { max-width: 520px; }
+#searchMessage { min-height: 1.5rem; color: var(--muted); }
+
+.cost-summary {
+    background: var(--bg-alt); border: 1px dashed var(--link); border-radius: 10px;
+    padding: 1rem 1.25rem; font-weight: 700; color: var(--heading);
+}
+
+/* ---------- 11. FOOTER ---------- */
+footer, .site-footer {
+    background: var(--footer-bg); color: rgba(255,255,255,.88); padding: 3rem 0 1.5rem;
+}
+footer p, .site-footer p { color: rgba(255,255,255,.88); }
+footer h3, footer h4, footer h5, .site-footer h3 { color: #fff; font-size: 1.15rem; margin-bottom: 1rem; }
+footer a, .site-footer a { color: var(--sky); }
+footer a:hover, .site-footer a:hover { color: var(--gold); }
+div.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.5rem; }
+ul.footer-links { list-style: none; padding: 0; margin: 0; }
+ul.footer-links li { margin-bottom: .6rem; }
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.2); margin-top: 1.5rem;
+    padding-top: 1rem; text-align: center;
+}
+
+/* ---------- 12. ACCESSIBILITY ---------- */
+a:focus-visible, button:focus-visible, .form-control:focus-visible,
+.form-select:focus-visible, .accordion-button:focus-visible {
+    outline: 3px solid var(--focus); outline-offset: 3px;
+}
+.navbar :focus-visible, footer :focus-visible, .hero-section :focus-visible,
+.cta-section :focus-visible { outline-color: var(--gold); }
+
+:root[data-bs-theme="dark"] img:not(.hero-bg),
+body.dark-mode img:not(.hero-bg) { filter: brightness(.92); }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: .01ms !important; transition-duration: .01ms !important;
+    }
+}
+
+/* ---------- 13. RESPONSIVE (xxl > lg > md > sm) ---------- */
+@media (min-width: 1400px) {
+    .hero-section, .home-hero { min-height: 700px; }
+    .hero-section h1, .home-hero h1 { font-size: 4.2rem; }
+}
+@media (max-width: 767.98px) {
+    .navbar-collapse { padding-top: .75rem; }
+    .navbar .nav-link { border-bottom: 0; }
+    .theme-toggle { margin: .5rem 0 .25rem; }
+    .carousel-item img { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 767.98px) {
+    .hero-section, .home-hero { min-height: 440px; padding: 3rem 0; }
+    .hero-overlay { background: rgba(23, 50, 77, .72); }
+    .carousel-item img { aspect-ratio: 4 / 3; }
+    .carousel-caption { position: static; border-radius: 0; }
+    .booking-panel, .contact-form, .contact-info { padding: 1.5rem 1.15rem; }
+}
+@media (max-width: 575.98px) {
+    .hero-buttons .btn { width: 100%; }
+    .destination-content, .card-content, .card-body { padding: 1.1rem 1.15rem 1.35rem; }
+    .page-header { padding: 3rem 0; }
+}
+
+/* ---------- 14. EXTRA STYLE: visible navigation, motion, accents ---------- */
+.navbar {
+    --bs-navbar-color: rgba(255,255,255,.92); --bs-navbar-hover-color: var(--gold);
+    --bs-navbar-active-color: var(--gold); --bs-navbar-brand-color: #fff;
+    --bs-navbar-brand-hover-color: var(--gold);
+    border-bottom: 3px solid var(--gold);
+}
+.navbar .navbar-nav .nav-link { color: #fff; font-size: 1rem; font-weight: 600; border-radius: 6px; }
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link.show { color: var(--gold); background: rgba(255,255,255,.08); }
+.navbar-toggler { border: 2px solid rgba(255,255,255,.8); }
+
+.text-center > h2::after, .section-heading h2::after, .page-header h1::after {
+    content: ""; display: block; width: 56px; height: 4px; border-radius: 4px;
+    margin: .6rem auto 0; background: var(--gold);
+}
+article > h2::after { content: ""; display: block; width: 56px; height: 4px; margin-top: .6rem; border-radius: 4px; background: var(--gold); }
+
+@keyframes riseIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.hero-content > * { animation: riseIn .8s ease both; }
+.hero-content > *:nth-child(2) { animation-delay: .12s; }
+.hero-content > *:nth-child(3) { animation-delay: .24s; }
+.hero-content > *:nth-child(4) { animation-delay: .36s; }
+.page-header h1, .page-header p { animation: riseIn .7s ease both; }
+
+.welcome-image, .gallery-item { transition: transform .3s ease, box-shadow .3s ease; }
+.welcome-image:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.gallery-item:hover { box-shadow: var(--shadow-hover); }
+.btn:hover { transform: translateY(-2px); }
+
+footer, .site-footer { border-top: 4px solid var(--gold); }
+footer strong { font-family: Georgia, serif; font-size: 1.3rem; color: #fff; }
+.footer-bottom p { font-size: .9rem; letter-spacing: .02em; }
+
+.back-to-top {
+    position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 1040;
+    width: 46px; height: 46px; border-radius: 50%;
+    border: 2px solid var(--gold); background: var(--nav-bg); color: #fff;
+    font-size: 1.3rem; line-height: 1; cursor: pointer;
+    opacity: 0; visibility: hidden; transform: translateY(10px);
+    transition: opacity .3s, visibility .3s, transform .3s, background-color .3s, color .3s;
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: none; }
+.back-to-top:hover { background: var(--gold); color: var(--navy); }
+
+/* ---------- 15. LOGO ---------- */
+.navbar-brand { display: inline-flex; align-items: center; gap: .6rem; }
+ 
